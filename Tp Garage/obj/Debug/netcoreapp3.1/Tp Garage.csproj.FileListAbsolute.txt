@@ -1,0 +1,13 @@
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.csprojAssemblyReference.cache
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.AssemblyInfoInputs.cache
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.AssemblyInfo.cs
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.csproj.CoreCompileInputs.cache
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.exe
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.deps.json
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.runtimeconfig.json
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.runtimeconfig.dev.json
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.dll
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.pdb
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.dll
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.pdb
+C:\Users\mancu\OneDrive - Campus Rene Cassin\EPSI\B2\Langage C#\Tp Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.genruntimeconfig.cache
