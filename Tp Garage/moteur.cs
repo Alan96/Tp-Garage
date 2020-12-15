@@ -25,7 +25,7 @@ namespace Tp_Garage
             string saisie = "";
             while (_puissance <= 0)
             {
-                Console.WriteLine("Indiquez la puissance du Moteur");
+                Console.Write("Indiquez la puissance du Moteur : ");
                 saisie = Console.ReadLine();
                 try
                 {
@@ -33,7 +33,6 @@ namespace Tp_Garage
                 }
                 catch (Exception e)
                 {
-
                     Console.WriteLine("Test uni, message erreur : {0}", e.Message);
                 }
             }
@@ -45,6 +44,7 @@ namespace Tp_Garage
                 Console.WriteLine("e ou essence");
                 Console.WriteLine("h ou hybride");
                 Console.WriteLine("el ou electique");
+                Console.Write("\nVotre choix : ");
 
                 saisie = Console.ReadLine();
 

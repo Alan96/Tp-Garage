@@ -35,23 +35,23 @@ namespace Tp_Garage
         {
             string saisie;
             // Trouver facon de recuper automatiquement le nom de la classe
-            Console.WriteLine("Saisir nom vehicule");
+            Console.Write("Saisir nom vehicule : ");
             _nomVehicule = Console.ReadLine();
 
 
             //Marque
-            Console.WriteLine("Saisir marque vehicule");
+            Console.Write("Saisir marque vehicule : ");
             _marqueVehicule = Console.ReadLine();
             
             //Moteur
-            Console.WriteLine("Moteur :");
+            Console.Write("Moteur : ");
             _moteurvehicule = new moteur();
 
             //option
-            Console.WriteLine("Ajouter option");
+            Console.Write("Ajouter option : ");
 
 
-            Console.WriteLine("Saisir prix Brut du vehicule");
+            Console.Write("Saisir prix Brut du vehicule : ");
             saisie = Console.ReadLine();
             _prixBrutVehicule = int.Parse(saisie);
            // calculTaxe();
@@ -61,7 +61,7 @@ namespace Tp_Garage
 
         public virtual void afficherInfos()
         {
-            Console.WriteLine("Nom vehicule {0}", _nomVehicule);
+            Console.WriteLine("\nNom vehicule {0}", _nomVehicule);
             Console.WriteLine("marque vehicule {0}", _marqueVehicule);
             Console.WriteLine("Infos Moteur");
             this._moteurvehicule.afficherInfos();
@@ -107,6 +107,7 @@ namespace Tp_Garage
             _prixNetVehicule = _prixBrutVehicule + _taxe;
         }
 
+        
        protected abstract void calculTaxe();
 
     }
