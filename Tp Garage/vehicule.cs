@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Tp_Garage
 {
@@ -15,7 +16,8 @@ namespace Tp_Garage
         protected float _prixNetVehicule;
         protected float _taxe;
 
-        public vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule, float taxe)
+        public vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule,
+            float taxe)
         {
             _nomVehicule = nomVehicule;
             _marqueVehicule = marqueVehicule;
@@ -35,28 +37,32 @@ namespace Tp_Garage
         {
             string saisie;
             // Trouver facon de recuper automatiquement le nom de la classe
+            
+            Console.WriteLine("Creation d'un(e) nouveau/nouvelle " + this.GetType().Name);  // Recupere automatiquement le nom de la classe comme tu le voulais mon cochon
             Console.Write("Saisir nom vehicule : ");
             _nomVehicule = Console.ReadLine();
 
 
             //Marque
-            Console.Write("Saisir marque vehicule : ");
+             Console.Write("Saisir marque vehicule : ");
             _marqueVehicule = Console.ReadLine();
-            
+
             //Moteur
             Console.Write("Moteur : ");
             _moteurvehicule = new moteur();
+
 
             //option
             Console.Write("Ajouter option : ");
 
 
-            Console.Write("Saisir prix Brut du vehicule : ");
-            saisie = Console.ReadLine();
-            _prixBrutVehicule = int.Parse(saisie);
-           // calculTaxe();
-           // setPrixNet();
+            //Console.Write("Saisir prix Brut du vehicule : ");
+            //saisie = Console.ReadLine();
+            //_prixBrutVehicule = int.Parse(saisie);
+            _prixBrutVehicule = inputManager.askInt("Saisir prix Brut du vehicule : ");
 
+            // calculTaxe();
+            // setPrixNet();
         }
 
         public virtual void afficherInfos()
@@ -77,12 +83,12 @@ namespace Tp_Garage
             Console.WriteLine("Prix net vehicule {0}", _prixNetVehicule);
         }
 
-     //   protected virtual moteur GetMoteur() { }
+        //   protected virtual moteur GetMoteur() { }
         public float getPrixNet()
         {
             return _prixNetVehicule;
-
         }
+
         public float getPrixBrut()
         {
             return _prixBrutVehicule;
@@ -98,7 +104,6 @@ namespace Tp_Garage
             for (int i = 0; i < plusieursOptions; i++)
             {
                 optionsVehicule.Add(new options());
-
             }
         }
 
@@ -107,8 +112,11 @@ namespace Tp_Garage
             _prixNetVehicule = _prixBrutVehicule + _taxe;
         }
 
-        
-       protected abstract void calculTaxe();
 
+        static void checkInt(int value)
+        {
+        }
+
+        protected abstract void calculTaxe();
     }
 }

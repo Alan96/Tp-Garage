@@ -16,16 +16,19 @@ namespace Tp_Garage
             base.setInfos();
 
             //Essieux
-            Console.Write("Saisir nbr essieux : ");
-            _nbrEssieux = int.Parse(Console.ReadLine());
+            //Console.Write("Saisir nbr essieux : ");
+            //_nbrEssieux = int.Parse(Console.ReadLine());
+            _nbrEssieux = inputManager.askInt("Saisir nbr essieux : ");
 
             //Poid chargement
-            Console.Write("Saisir poid chargement : ");
-            _poidChargement = int.Parse(Console.ReadLine());
+           // Console.Write("Saisir poid chargement : ");
+            //_poidChargement = int.Parse(Console.ReadLine());
+            _poidChargement = inputManager.askInt("Saisir poid chargement : ");
 
             //Volume chargement
-            Console.Write("Saisir volume chargement : ");
-            _volumeChargement = int.Parse(Console.ReadLine());
+            //Console.Write("Saisir volume chargement : ");
+            //_volumeChargement = int.Parse(Console.ReadLine());
+            _volumeChargement = inputManager.askInt("Saisir volume chargement : ");
 
             calculTaxe();
         }

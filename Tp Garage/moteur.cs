@@ -23,20 +23,9 @@ namespace Tp_Garage
         private void setMoteur()
         {
             string saisie = "";
-            while (_puissance <= 0)
-            {
-                Console.Write("Indiquez la puissance du Moteur : ");
-                saisie = Console.ReadLine();
-                try
-                {
-                    _puissance = int.Parse(saisie);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Test uni, message erreur : {0}", e.Message);
-                }
-            }
-
+            
+            _puissance = inputManager.askInt("Indiquez la puissance du Moteur : ");
+            
             while (!(saisie == "diesel" || saisie == "essence" || saisie == "hybride" || saisie == "electrique"))
             {
                 Console.WriteLine("Indiquez le type du Moteur");
@@ -67,9 +56,8 @@ namespace Tp_Garage
 
                 if (!(saisie == "diesel" || saisie == "essence" || saisie == "hybride" || saisie == "electrique"))
                 {
-                    Console.WriteLine("Veuillez saisir une des valeurs indiquee");
+                    inputManager.displayError("Veuillez saisir une des valeurs indiquee !");
                 }
-
             }
 
             _type = saisie;
@@ -81,6 +69,5 @@ namespace Tp_Garage
             Console.WriteLine("Type de moteur : {0}", _type);
             Console.WriteLine("Puissance en chevaux : {0}", _puissance);
         }
-
     }
 }

@@ -16,20 +16,26 @@ namespace Tp_Garage
             base.setInfos();
 
             //chevaux
-            Console.Write("Saisir nbr Chevaux fiscaux : ");
-            _chevaux = int.Parse(Console.ReadLine());
+           // Console.Write("Saisir nbr Chevaux fiscaux : ");
+          //  _chevaux = int.Parse(Console.ReadLine());
+          _chevaux = inputManager.askInt("Saisir nbr Chevaux fiscaux : ");
             
             //Porte
-            Console.Write("Saisir nbr Porte : ");
-            _nbrPorte = int.Parse(Console.ReadLine());
+           // Console.Write("Saisir nbr Porte : ");
+           // _nbrPorte = int.Parse(Console.ReadLine());
+            _nbrPorte = inputManager.askInt("Saisir nbr Porte : ");
 
             //Sieges
-            Console.Write("Saisir nbr  : ");
-            _nbrSieges = int.Parse(Console.ReadLine());
+           // Console.Write("Saisir nbr  : ");
+           // _nbrSieges = int.Parse(Console.ReadLine());
+            _nbrSieges = inputManager.askInt("Saisir nbr sieges: ");
 
             //Coffre
-            Console.Write("Saisir taille Coffre : ");
-            _tailleCoffre = int.Parse(Console.ReadLine());
+            //Console.Write("Saisir taille Coffre : ");
+            //_tailleCoffre = int.Parse(Console.ReadLine());
+            _tailleCoffre = inputManager.askInt("Saisir taille Coffre : ");
+            
+            
             calculTaxe();
         }
 
