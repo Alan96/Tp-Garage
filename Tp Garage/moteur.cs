@@ -14,6 +14,12 @@ namespace Tp_Garage
             setMoteur();
         }
 
+        public moteur(int puissance, string type)
+        {
+            _puissance = puissance;
+            _type = type;
+        }
+
         private void setMoteur()
         {
             string saisie = "";
@@ -68,5 +74,13 @@ namespace Tp_Garage
 
             _type = saisie;
         }
+
+
+        private void afficherInfos()
+        {
+            Console.WriteLine("Type de moteur : {0}", _type);
+            Console.WriteLine("Puissance en chevaux : {0}", _puissance);
+        }
+
     }
 }

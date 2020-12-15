@@ -34,18 +34,45 @@ namespace Tp_Garage
             _nomVehicule = Console.ReadLine();
             Console.WriteLine("Saisir marque vehicule");
             _marqueVehicule = Console.ReadLine();
-
-
-            // Ajouter nouvelle option a la liste, faire constructeur qui demandera implementation du tout // .... ??? + surcharge constructeur pour chaque classe ou on passe directemnt toutes info en param
-           // optionsVehicule.Add(new options());
+            Console.WriteLine("Saisir prix Brut du vehicule");
+            saisie = Console.ReadLine();
+            _prixBrutVehicule = int.Parse(saisie);
+            calculTaxe();
+            setPrixNet();
 
 
 
         }
 
         protected abstract moteur GetMoteur();
-        protected abstract float getPrixNet();
-        protected abstract float getPrixBrut();
+        protected float getPrixNet()
+        {
+            return _prixNetVehicule;
+
+        }
+        protected float getPrixBrut()
+        {
+            return _prixBrutVehicule;
+        }
+
+        protected void ajouterOption()
+        {
+            optionsVehicule.Add(new options());
+        }
+
+        protected void ajouterOption(int plusieursOptions)
+        {
+            for (int i = 0; i < plusieursOptions; i++)
+            {
+                optionsVehicule.Add(new options());
+
+            }
+        }
+
+        protected void setPrixNet()
+        {
+            _prixNetVehicule = (_prixBrutVehicule * _taxe) / 100;
+        }
         protected abstract void calculTaxe();
 
     }
