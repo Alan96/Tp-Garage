@@ -10,6 +10,9 @@ namespace Tp_Garage
             Console.WriteLine(test._puissance);
             Console.WriteLine(test._type);
             Console.ReadKey();
+            vehicule ggre = new voiture();
+            ggre.afficherInfos();
+
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Tp_Garage
             string saisie = "";
             while (_puissance <= 0)
             {
-                Console.WriteLine("Indiquez la puissance en chevaux du Moteur");
+                Console.WriteLine("Indiquez la puissance du Moteur");
                 saisie = Console.ReadLine();
                 try
                 {
@@ -76,7 +76,7 @@ namespace Tp_Garage
         }
 
 
-        private void afficherInfos()
+        public void afficherInfos()
         {
             Console.WriteLine("Type de moteur : {0}", _type);
             Console.WriteLine("Puissance en chevaux : {0}", _puissance);

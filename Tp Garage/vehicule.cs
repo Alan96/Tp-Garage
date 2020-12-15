@@ -15,7 +15,7 @@ namespace Tp_Garage
         protected float _prixNetVehicule;
         protected float _taxe;
 
-        protected vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule, float taxe)
+        public vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule, float taxe)
         {
             _nomVehicule = nomVehicule;
             _marqueVehicule = marqueVehicule;
@@ -26,31 +26,64 @@ namespace Tp_Garage
             _id++;
         }
 
+        public vehicule()
+        {
+            setInfos();
+        }
+
         protected virtual void setInfos()
         {
             string saisie;
             // Trouver facon de recuper automatiquement le nom de la classe
             Console.WriteLine("Saisir nom vehicule");
             _nomVehicule = Console.ReadLine();
+
+
+            //Marque
             Console.WriteLine("Saisir marque vehicule");
             _marqueVehicule = Console.ReadLine();
+            
+            //Moteur
+            Console.WriteLine("Moteur :");
+            _moteurvehicule = new moteur();
+
+            //option
+            Console.WriteLine("Ajouter option");
+
+
             Console.WriteLine("Saisir prix Brut du vehicule");
             saisie = Console.ReadLine();
             _prixBrutVehicule = int.Parse(saisie);
-            calculTaxe();
-            setPrixNet();
-
-
+           // calculTaxe();
+           // setPrixNet();
 
         }
 
-        protected abstract moteur GetMoteur();
-        protected float getPrixNet()
+        public virtual void afficherInfos()
+        {
+            Console.WriteLine("Nom vehicule {0}", _nomVehicule);
+            Console.WriteLine("marque vehicule {0}", _marqueVehicule);
+            Console.WriteLine("Infos Moteur");
+            this._moteurvehicule.afficherInfos();
+            Console.WriteLine("Infos Options");
+
+            foreach (options option in optionsVehicule)
+            {
+                option.afficherInfos();
+            }
+
+            Console.WriteLine("Prix brut vehicule {0}", _prixBrutVehicule);
+            Console.WriteLine("Taxe appliquee : {0}", _taxe);
+            Console.WriteLine("Prix net vehicule {0}", _prixNetVehicule);
+        }
+
+     //   protected virtual moteur GetMoteur() { }
+        public float getPrixNet()
         {
             return _prixNetVehicule;
 
         }
-        protected float getPrixBrut()
+        public float getPrixBrut()
         {
             return _prixBrutVehicule;
         }
@@ -71,9 +104,10 @@ namespace Tp_Garage
 
         protected void setPrixNet()
         {
-            _prixNetVehicule = (_prixBrutVehicule * _taxe) / 100;
+            _prixNetVehicule = _prixBrutVehicule + _taxe;
         }
-        protected abstract void calculTaxe();
+
+       protected abstract void calculTaxe();
 
     }
 }

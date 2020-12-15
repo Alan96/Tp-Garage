@@ -29,7 +29,7 @@ namespace Tp_Garage
             _prixOption = int.Parse(Console.ReadLine());
         }
 
-        private void afficherInfos()
+        public void afficherInfos()
         {
             Console.WriteLine("Nom de l'option : {0}", _nomOption);
             Console.WriteLine("Prix de l'option : {0}", _prixOption);         
