@@ -42,7 +42,7 @@ namespace Tp_Garage
         public override void afficherInfos()
         {
             base.afficherInfos();
-            Console.WriteLine("Chevaux {0} : {1}", _typeVehicule, _chevaux);
+            Console.WriteLine("Chevaux vehicule {0}", _chevaux);
             Console.WriteLine("Nbr Portes : {0}", _nbrPorte);
             Console.WriteLine("Nbr Sieges : {0}", _nbrSieges);
             Console.WriteLine("Taille du coffre : {0}", _tailleCoffre);

@@ -14,8 +14,8 @@ namespace Tp_Garage
             // Console.ReadKey();
 
             //-----Test voiture---
-            vehicule ggre = new voiture();
-            ggre.afficherInfos();
+            //vehicule ggre = new voiture();
+            //ggre.afficherInfos();
 
 
             //-----Test options-----

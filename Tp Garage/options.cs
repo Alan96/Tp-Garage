@@ -25,7 +25,8 @@ namespace Tp_Garage
         {
             Console.Write("Saisir nom de l'option : ");
             _nomOption = Console.ReadLine();
-            _prixOption = inputManager.askInt("Saisir prix de l'option : ");
+            Console.Write("Saisir prix de l'option : ");
+            _prixOption = int.Parse(Console.ReadLine());
         }
 
         public void afficherInfos()

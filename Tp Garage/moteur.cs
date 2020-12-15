@@ -32,7 +32,7 @@ namespace Tp_Garage
                 Console.WriteLine("d ou diesel");
                 Console.WriteLine("e ou essence");
                 Console.WriteLine("h ou hybride");
-                Console.WriteLine("el ou electrique");
+                Console.WriteLine("el ou electique");
                 Console.Write("\nVotre choix : ");
 
                 saisie = Console.ReadLine();
@@ -67,7 +67,7 @@ namespace Tp_Garage
         public void afficherInfos()
         {
             Console.WriteLine("Type de moteur : {0}", _type);
-            Console.WriteLine("Puissance : {0}", _puissance);
+            Console.WriteLine("Puissance en chevaux : {0}", _puissance);
         }
     }
 }
