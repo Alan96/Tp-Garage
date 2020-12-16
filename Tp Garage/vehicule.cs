@@ -7,7 +7,8 @@ namespace Tp_Garage
 {
     public abstract class vehicule
     {
-        protected static int _id;
+        private static int _id; // Id de la classe
+        protected int _vehiculeId;
         protected string _nomVehicule;
         protected string _marqueVehicule;
         protected moteur _moteurvehicule;
@@ -26,6 +27,8 @@ namespace Tp_Garage
             _prixBrutVehicule = prixBrutVehicule;
             _prixNetVehicule = prixNetVehicule;
             _taxe = taxe;
+            _vehiculeId = _id;
+
             _id++;
         }
 
@@ -37,15 +40,18 @@ namespace Tp_Garage
         protected virtual void setInfos()
         {
             _id++;
+
+            _vehiculeId = _id;
             // Trouver facon de recuper automatiquement le nom de la classe
             this._typeVehicule = this.GetType().Name;
-            Console.WriteLine("Creation d'un(e) nouveau/nouvelle {0}", _typeVehicule);  // Recupere automatiquement le nom de la classe comme tu le voulais mon cochon
+            Console.WriteLine("Creation d'un(e) nouveau/nouvelle {0}",
+                _typeVehicule); // Recupere automatiquement le nom de la classe comme tu le voulais mon cochon
             Console.Write("Saisir nom {0} :", _typeVehicule);
             _nomVehicule = Console.ReadLine();
 
 
             //Marque
-             Console.Write("Saisir marque {0} :", _typeVehicule);
+            Console.Write("Saisir marque {0} :", _typeVehicule);
             _marqueVehicule = Console.ReadLine();
 
             //Moteur
@@ -68,7 +74,7 @@ namespace Tp_Garage
 
         public virtual void afficherInfos()
         {
-            Console.WriteLine("ID : {0}", _id);
+            Console.WriteLine("ID : {0}", _vehiculeId);
             Console.WriteLine("Nom  {0} : {1}", _typeVehicule, _nomVehicule);
             Console.WriteLine("marque {0} : {1}", _typeVehicule, _marqueVehicule);
             Console.WriteLine("Infos Moteur");

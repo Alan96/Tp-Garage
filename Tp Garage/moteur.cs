@@ -25,42 +25,8 @@ namespace Tp_Garage
             string saisie = "";
             
             _puissance = inputManager.askInt("Indiquez la puissance du Moteur : ");
-            
-            while (!(saisie == "diesel" || saisie == "essence" || saisie == "hybride" || saisie == "electrique"))
-            {
-                Console.WriteLine("Indiquez le type du Moteur");
-                Console.WriteLine("d ou diesel");
-                Console.WriteLine("e ou essence");
-                Console.WriteLine("h ou hybride");
-                Console.WriteLine("el ou electrique");
-                Console.Write("\nVotre choix : ");
 
-                saisie = Console.ReadLine();
-
-                if (saisie == "e")
-                {
-                    saisie = "essence";
-                }
-                else if (saisie == "d")
-                {
-                    saisie = "diesel";
-                }
-                else if (saisie == "h")
-                {
-                    saisie = "hybride";
-                }
-                else if (saisie == "el")
-                {
-                    saisie = "electrique";
-                }
-
-                if (!(saisie == "diesel" || saisie == "essence" || saisie == "hybride" || saisie == "electrique"))
-                {
-                    inputManager.displayError("Veuillez saisir une des valeurs indiquee !");
-                }
-            }
-
-            _type = saisie;
+            _type = inputManager.askMotorType();
         }
 
 

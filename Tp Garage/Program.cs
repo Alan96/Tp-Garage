@@ -15,8 +15,11 @@ namespace Tp_Garage
             // Console.ReadKey();
 
             //-----Test voiture---
-            vehicule ggre = new voiture();
-            ggre.afficherInfos();
+            vehicule v1 = new voiture();
+            vehicule v2 = new voiture();
+            
+            v1.afficherInfos();
+            v2.afficherInfos();
 
 
             //-----Test options-----
@@ -26,8 +29,7 @@ namespace Tp_Garage
             //----Test camion-----
             //camion testCam = new camion();
             //testCam.afficherInfos();
-
-
+            
 
             //----Test moto-----
             //moto testMoto = new moto();
