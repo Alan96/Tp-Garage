@@ -13,7 +13,7 @@ namespace Tp_Garage
         {
             base.setInfos();
             _cylindre = _moteurvehicule._puissance;
-
+            calculTaxe();
         }
 
         public override void afficherInfos()
