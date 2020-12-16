@@ -36,6 +36,7 @@ namespace Tp_Garage
 
         protected virtual void setInfos()
         {
+            _id++;
             // Trouver facon de recuper automatiquement le nom de la classe
             this._typeVehicule = this.GetType().Name;
             Console.WriteLine("Creation d'un(e) nouveau/nouvelle {0}", _typeVehicule);  // Recupere automatiquement le nom de la classe comme tu le voulais mon cochon
@@ -67,7 +68,8 @@ namespace Tp_Garage
 
         public virtual void afficherInfos()
         {
-            Console.WriteLine("\nNom  {0} : {1}", _typeVehicule, _nomVehicule);
+            Console.WriteLine("ID : {0}", _id);
+            Console.WriteLine("Nom  {0} : {1}", _typeVehicule, _nomVehicule);
             Console.WriteLine("marque {0} : {1}", _typeVehicule, _marqueVehicule);
             Console.WriteLine("Infos Moteur");
             this._moteurvehicule.afficherInfos();

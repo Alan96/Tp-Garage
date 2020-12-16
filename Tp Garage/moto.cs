@@ -1,30 +1,32 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-//namespace Tp_Garage
-//{
-//    class moto : vehicule
-//    {
-//        private int _cylindre;
-//        protected override void calculTaxe()
-//        {
-//            _taxe = _cylindre * 0.3f;
-//        }
+namespace Tp_Garage
+{
+    class moto : vehicule
+    {
+        private int _cylindre;
 
-//        protected override moteur GetMoteur()
-//        {
-//            throw new NotImplementedException();
-//        }
 
-//        protected override float getPrixBrut()
-//        {
-//            throw new NotImplementedException();
-//        }
+        protected override void setInfos()
+        {
+            base.setInfos();
+            _cylindre = _moteurvehicule._puissance;
 
-//        protected override float getPrixNet()
-//        {
-//            throw new NotImplementedException();
-//        }
-//    }
-//}
+        }
+
+        public override void afficherInfos()
+        {
+            base.afficherInfos();
+            Console.WriteLine("Cylindree de la {0} : {1}", _typeVehicule, _cylindre);
+        }
+
+        protected override void calculTaxe()
+        {
+            _taxe = _cylindre * 0.3f;
+        }
+
+
+    }
+}
