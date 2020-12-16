@@ -15,11 +15,11 @@ namespace Tp_Garage
             // Console.ReadKey();
 
             //-----Test voiture---
-            vehicule v1 = new voiture();
-            vehicule v2 = new voiture();
+            //vehicule v1 = new voiture();
+           // vehicule v2 = new voiture();
             
-            v1.afficherInfos();
-            v2.afficherInfos();
+            //v1.afficherInfos();
+            //v2.afficherInfos();
 
 
             //-----Test options-----
