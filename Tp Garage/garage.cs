@@ -8,8 +8,13 @@ namespace Tp_Garage
     public class garage
     {
            public List<vehicule> vehiculesGarage = new List<vehicule>();
-        
-        public void ajouterVehicule()
+
+        public void ajouterVehicule(int test)
+        {
+
+        }
+
+            public void ajouterVehicule()
         {
             Console.WriteLine("Ajout d'un nouveau vehicule :");
             separator();
@@ -54,6 +59,30 @@ namespace Tp_Garage
                 separator();
             }
         }
+
+        //Test de trie avec compare to mais je comprends rien a leur fonction
+        //public void trieVehicule()
+        //{
+        //    foreach (vehicule vehiculeG in vehiculesGarage)
+        //    {
+        //        foreach (vehicule test in vehiculesGarage)
+        //        {
+        //            voiture v = vehiculeG as voiture;
+        //            if (v != vehiculeG)
+        //            {
+        //                if (v._chevaux.CompareTo(vehiculeG) != 1)
+        //                {
+        //                    int swap;
+        //                    swap = vehiculesGarage.IndexOf(v);
+        //                    vehiculesGarage.IndexOf(v) = vehiculesGarage.FindIndex(test);
+
+        //                }
+        //            }
+        //        }
+
+        //    }
+
+        //}
 
         private void separator()
         {

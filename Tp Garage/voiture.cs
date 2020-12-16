@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tp_Garage
 {
-    class voiture : vehicule
+    class voiture : vehicule, IComparable
     {
-        private int _chevaux;
+        public int _chevaux;
         private int _nbrPorte;
         private int _nbrSieges;
         private float _tailleCoffre;
@@ -16,24 +16,24 @@ namespace Tp_Garage
             base.setInfos();
 
             //chevaux
-           // Console.Write("Saisir nbr Chevaux fiscaux : ");
-          //  _chevaux = int.Parse(Console.ReadLine());
-          _chevaux = inputManager.askInt("Saisir nbr Chevaux fiscaux : ");
+            // Console.Write("Saisir nbr Chevaux fiscaux : ");
+            //  _chevaux = int.Parse(Console.ReadLine());
+            _chevaux = this._moteurvehicule._puissance;
             
-            //Porte
-           // Console.Write("Saisir nbr Porte : ");
-           // _nbrPorte = int.Parse(Console.ReadLine());
-            _nbrPorte = inputManager.askInt("Saisir nbr Porte : ");
+           // //Porte
+           //// Console.Write("Saisir nbr Porte : ");
+           //// _nbrPorte = int.Parse(Console.ReadLine());
+           // _nbrPorte = inputManager.askInt("Saisir nbr Porte : ");
 
-            //Sieges
-           // Console.Write("Saisir nbr  : ");
-           // _nbrSieges = int.Parse(Console.ReadLine());
-            _nbrSieges = inputManager.askInt("Saisir nbr sieges: ");
+           // //Sieges
+           //// Console.Write("Saisir nbr  : ");
+           //// _nbrSieges = int.Parse(Console.ReadLine());
+           // _nbrSieges = inputManager.askInt("Saisir nbr sieges: ");
 
-            //Coffre
-            //Console.Write("Saisir taille Coffre : ");
-            //_tailleCoffre = int.Parse(Console.ReadLine());
-            _tailleCoffre = inputManager.askInt("Saisir taille Coffre : ");
+           // //Coffre
+           // //Console.Write("Saisir taille Coffre : ");
+           // //_tailleCoffre = int.Parse(Console.ReadLine());
+           // _tailleCoffre = inputManager.askInt("Saisir taille Coffre : ");
             
             
             calculTaxe();
@@ -55,6 +55,12 @@ namespace Tp_Garage
             setPrixNet();
         }
 
+        int IComparable.CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+            voiture newVec = obj as voiture;
+            return this._chevaux.CompareTo(newVec._chevaux);
 
+        }
     }
 }

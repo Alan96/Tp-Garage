@@ -15,11 +15,11 @@ namespace Tp_Garage
             // Console.ReadKey();
 
             //-----Test voiture---
-            vehicule v1 = new voiture();
-            vehicule v2 = new voiture();
+            //vehicule v1 = new voiture();
+            //vehicule v2 = new voiture();
             
-            v1.afficherInfos();
-            v2.afficherInfos();
+            //v1.afficherInfos();
+            //v2.afficherInfos();
 
 
             //-----Test options-----
@@ -36,10 +36,14 @@ namespace Tp_Garage
             //testMoto.afficherInfos();
 
             garage ChezBernard = new garage();
+
             for (int i = 0; i < 2; i++)
             {
                 ChezBernard.ajouterVehicule();
             }
+
+            // ChezBernard.ajouterVehicule(2);
+            ChezBernard.trieVehicule();
 
             ChezBernard.afficherVehicules();
 
