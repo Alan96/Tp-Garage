@@ -7,16 +7,31 @@ namespace Tp_Garage
 {
     public class garage
     {
-        public List<vehicule> vehiculesGarage = new List<vehicule>();
+           public List<vehicule> vehiculesGarage = new List<vehicule>();
 
-        public void ajouterVehicule()
+        public void ajouterVehicule(int test)
+        {
+
+        }
+
+            public void ajouterVehicule()
         {
             Console.WriteLine("Ajout d'un nouveau vehicule :");
-            outputManager.displaySeparator();
-            string saisie = inputManager.askAddVehicule();
-
-            outputManager.displaySeparator();
-
+            separator();
+            string saisie = "";
+            while (!(saisie == "1" || saisie == "2"|| saisie == "3"))
+            {
+                Console.WriteLine("Quel type de vehicule souhaitez vous ajouter ?");
+                Console.WriteLine("Voiture = 1");
+                Console.WriteLine("Camion = 2");
+                Console.WriteLine("Moto = 3");
+                saisie = Console.ReadLine();
+                if (!(saisie == "1" || saisie == "2" || saisie == "3"))
+                {
+                    inputManager.displayError("Veuillez saisir une des valeurs indiquee !");
+                }
+            }
+            separator();
             switch (saisie)
             {
                 case "1":
@@ -27,20 +42,51 @@ namespace Tp_Garage
                     break;
                 case "3":
                     vehiculesGarage.Add(new moto());
+
                     break;
                 default:
                     break;
             }
+
         }
 
         public void afficherVehicules()
         {
-            foreach (vehicule vehiculeG in vehiculesGarage)
+            foreach(vehicule vehiculeG in vehiculesGarage)
             {
-                outputManager.displaySeparator();
+                separator();
                 vehiculeG.afficherInfos();
-                outputManager.displaySeparator();
+                separator();
             }
+        }
+
+        //Test de trie avec compare to mais je comprends rien a leur fonction
+        //public void trieVehicule()
+        //{
+        //    foreach (vehicule vehiculeG in vehiculesGarage)
+        //    {
+        //        foreach (vehicule test in vehiculesGarage)
+        //        {
+        //            voiture v = vehiculeG as voiture;
+        //            if (v != vehiculeG)
+        //            {
+        //                if (v._chevaux.CompareTo(vehiculeG) != 1)
+        //                {
+        //                    int swap;
+        //                    swap = vehiculesGarage.IndexOf(v);
+        //                    vehiculesGarage.IndexOf(v) = vehiculesGarage.FindIndex(test);
+
+        //                }
+        //            }
+        //        }
+
+        //    }
+
+        //}
+
+        private void separator()
+        {
+            Console.WriteLine("=======================================================");
         }
     }
 }

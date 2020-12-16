@@ -27,9 +27,10 @@ namespace Tp_Garage
             _prixBrutVehicule = prixBrutVehicule;
             _prixNetVehicule = prixNetVehicule;
             _taxe = taxe;
-            _vehiculeId = _id;
 
             _id++;
+            _vehiculeId = _id;
+
         }
 
         public vehicule()
@@ -59,17 +60,17 @@ namespace Tp_Garage
             _moteurvehicule = new moteur();
 
 
-            //option
-            Console.Write("Ajouter option : ");
+            ////option
+            //Console.Write("Ajouter option : ");
 
 
-            //Console.Write("Saisir prix Brut du vehicule : ");
-            //saisie = Console.ReadLine();
-            //_prixBrutVehicule = int.Parse(saisie);
-            _prixBrutVehicule = inputManager.askInt("Saisir prix Brut : ");
+            ////Console.Write("Saisir prix Brut du vehicule : ");
+            ////saisie = Console.ReadLine();
+            ////_prixBrutVehicule = int.Parse(saisie);
+            //_prixBrutVehicule = inputManager.askInt("Saisir prix Brut : ");
 
-            // calculTaxe();
-            // setPrixNet();
+            //// calculTaxe();
+            //// setPrixNet();
         }
 
         public virtual void afficherInfos()
@@ -118,11 +119,6 @@ namespace Tp_Garage
         protected void setPrixNet()
         {
             _prixNetVehicule = _prixBrutVehicule + _taxe;
-        }
-
-
-        static void checkInt(int value)
-        {
         }
 
         protected abstract void calculTaxe();
