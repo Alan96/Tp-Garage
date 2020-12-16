@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Tp_Garage
 {
-    public abstract class vehicule
+    public abstract class vehicule : IComparable<vehicule>
     {
         private static int _id; // Id de la classe
         protected int _vehiculeId;
@@ -30,7 +30,6 @@ namespace Tp_Garage
 
             _id++;
             _vehiculeId = _id;
-
         }
 
         public vehicule()
@@ -122,5 +121,10 @@ namespace Tp_Garage
         }
 
         protected abstract void calculTaxe();
+
+        public int CompareTo(vehicule other)
+        {
+            return _prixNetVehicule.CompareTo(other._prixNetVehicule);
+        }
     }
 }
