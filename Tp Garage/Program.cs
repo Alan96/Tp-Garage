@@ -43,7 +43,7 @@ namespace Tp_Garage
             }
 
             // ChezBernard.ajouterVehicule(2);
-            ChezBernard.trieVehicule();
+            //ChezBernard.trieVehicule();
 
             ChezBernard.afficherVehicules();
 
