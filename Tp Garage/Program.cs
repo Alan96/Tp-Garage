@@ -7,6 +7,7 @@ namespace Tp_Garage
     {
         static void Main()
         {
+
             //-----Test moteur-----
             // moteur test = new moteur();
             // Console.WriteLine(test._puissance);
@@ -23,9 +24,22 @@ namespace Tp_Garage
 
 
             //----Test camion-----
-            camion testCam =  new camion();
-            testCam.afficherInfos();
-            
+            //camion testCam = new camion();
+            //testCam.afficherInfos();
+
+
+
+            //----Test moto-----
+            //moto testMoto = new moto();
+            //testMoto.afficherInfos();
+
+            garage ChezBernard = new garage();
+            for (int i = 0; i < 2; i++)
+            {
+                ChezBernard.ajouterVehicule();
+            }
+
+            ChezBernard.afficherVehicules();
 
             
         }
