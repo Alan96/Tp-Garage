@@ -17,7 +17,7 @@ namespace Tp_Garage
             {
                 if (!firstIteration)
                 {
-                    displayError("Erreur dans le choix !");
+                    outputManager.displayError("Erreur dans le choix !");
                 }
 
                 firstIteration = false;
@@ -39,15 +39,15 @@ namespace Tp_Garage
             {
                 if (!firstIteration)
                 {
-                    displayError("Erreur dans le choix !");
+                    outputManager.displayError("Erreur dans le choix !");
                 }
 
                 firstIteration = false;
                 Console.WriteLine("Type du moteur :");
-                Console.WriteLine("- Diesel ou e");
-                Console.WriteLine("- Essence ou e");
-                Console.WriteLine("- Hybride ou h");
-                Console.WriteLine("- Electrique ou el");
+                Console.WriteLine("    - Diesel ou e");
+                Console.WriteLine("    - Essence ou e");
+                Console.WriteLine("    - Hybride ou h");
+                Console.WriteLine("    - Electrique ou el");
                 Console.Write("\nVotre choix : ");
                 value = Console.ReadLine();
             }
@@ -71,11 +71,33 @@ namespace Tp_Garage
             return value.ToLower();
         }
 
-        public static void displayError(string message)
+
+        public static string askAddVehicule()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(message);
-            Console.ResetColor();
+            Regex regInt = new Regex("^[1-3]$");
+            bool firstIteration = true;
+            string value = "";
+
+            while (regInt.Match(value.ToLower()).Length <= 0)
+            {
+                if (!firstIteration)
+                {
+                    outputManager.displayError("Veuillez saisir une des valeurs indiquee !");
+                }
+
+                firstIteration = false;
+                Console.WriteLine("Quel type de vehicule souhaitez vous ajouter ?");
+                Console.WriteLine("    - Voiture : 1");
+                Console.WriteLine("    - Camion : 2");
+                Console.WriteLine("    - Moto : 3");
+                Console.Write("\nVotre choix : ");
+                value = Console.ReadLine();
+            }
+
+            return value;
         }
+
+        
+
     }
 }
