@@ -36,13 +36,16 @@ namespace Tp_Garage
             //testMoto.afficherInfos();
 
             garage ChezBernard = new garage();
-            
-            ChezBernard.ajouterVehicule(3);
-            
-            
-            ChezBernard.trieVehicule();
+
+            for (int i = 0; i < 2; i++)
+            {
+                ChezBernard.ajouterVehicule();
+            }
+
+            // ChezBernard.ajouterVehicule(2);
+            //ChezBernard.trieVehicule();
+
             ChezBernard.afficherVehicules();
-            
 
             
         }
