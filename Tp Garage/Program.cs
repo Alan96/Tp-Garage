@@ -38,7 +38,7 @@ namespace Tp_Garage
             garage ChezBernard = new garage();
 
             ChezBernard.ajouterVehicule();
-            ChezBernard.ajouterVehicule(3);
+           // ChezBernard.ajouterVehicule();
             
             
             ChezBernard.triVehicules();

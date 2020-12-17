@@ -25,7 +25,7 @@ namespace Tp_Garage
 
         protected override void calculTaxe()
         {
-            _taxe = _cylindre * 0.3f;
+            _taxe = (int) Math.Round(_cylindre * 0.3f);
         }
 
 

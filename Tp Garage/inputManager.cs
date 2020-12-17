@@ -32,7 +32,7 @@ namespace Tp_Garage
 
         public static string askMotorType()
         {
-            //La saisie doit etre un mot parmis cette liste
+            //La saisie doit etre un mot parmi cette liste
             Regex regMotorType = new Regex("^\\b(diesel|essence|electrique|hybride|e|h|d|el)$");
             bool firstIteration = true;
             string value = "";

@@ -16,6 +16,7 @@ namespace Tp_Garage
         protected float _prixBrutVehicule;
         protected float _prixNetVehicule;
         protected float _taxe;
+        protected float _totalOptions;
         protected string _typeVehicule;
 
         public vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule,
@@ -46,12 +47,12 @@ namespace Tp_Garage
             this._typeVehicule = this.GetType().Name;
             Console.WriteLine("Creation d'un(e) nouveau/nouvelle {0}",
                 _typeVehicule); // Recupere automatiquement le nom de la classe comme tu le voulais mon cochon
-            Console.Write("Saisir nom {0} :", _typeVehicule);
+            Console.Write("Saisir nom {0} : ", _typeVehicule);
             _nomVehicule = Console.ReadLine();
 
 
             //Marque
-            Console.Write("Saisir marque {0} :", _typeVehicule);
+            Console.Write("Saisir marque {0} : ", _typeVehicule);
             _marqueVehicule = Console.ReadLine();
 
             //Moteur
@@ -60,8 +61,19 @@ namespace Tp_Garage
 
 
             //option
-            Console.Write("Ajouter option : ");
-            ajouterOption();
+            Console.WriteLine("Voulez-vous ajouter une option ? (y/n)");
+            string saisie = Console.ReadLine();
+            while (saisie != "y" && saisie != "n")
+            {
+                Console.WriteLine("Saisir y ou n");
+                saisie = Console.ReadLine();
+
+            }
+            if (saisie == "y")
+            {
+                ajouterOption(inputManager.askInt("Nombre d'options à ajouter : "));
+
+            }
 
             //Prix Brut
             _prixBrutVehicule = inputManager.askInt("Saisir prix Brut : ");
@@ -75,14 +87,29 @@ namespace Tp_Garage
             Console.WriteLine("marque {0} : {1}", _typeVehicule, _marqueVehicule);
             Console.WriteLine("Infos Moteur");
             this._moteurvehicule.afficherInfos();
-            Console.WriteLine("Infos Options");
 
+            int i = 0;
             foreach (options option in optionsVehicule)
             {
+                if (i == 0)
+                {
+                    Console.WriteLine("---------------");
+                    Console.WriteLine("Infos Options");
+                }
+                i++;
+
+                Console.WriteLine();
+                Console.WriteLine("Option " + i);
                 option.afficherInfos();
+                if (i == optionsVehicule.Count)
+                {
+                    Console.WriteLine("---------------");
+
+                }
             }
 
             Console.WriteLine("Prix brut {0} : {1}", _typeVehicule, _prixBrutVehicule);
+            Console.WriteLine("Prix total des options " + _totalOptions);
             Console.WriteLine("Taxe appliquee : {0}", _taxe);
             Console.WriteLine("Prix net {0} : {1}", _typeVehicule, _prixNetVehicule);
         }
@@ -105,10 +132,10 @@ namespace Tp_Garage
             int prixOptions = 0;
             foreach (options opt in optionsVehicule)
             {
-                prixOptions += opt._prixOption;
+                _totalOptions += opt._prixOption;
             }
 
-            _prixNetVehicule = _prixBrutVehicule + _taxe + prixOptions;
+            _prixNetVehicule = _prixBrutVehicule + _taxe + _totalOptions;
         }
 
         protected abstract void calculTaxe();
