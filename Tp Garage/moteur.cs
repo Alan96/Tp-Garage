@@ -25,7 +25,7 @@ namespace Tp_Garage
             string saisie = "";
             
             _puissance = inputManager.askInt("Indiquez la puissance du Moteur : ");
-
+            //Nous avons pris quelques libertés pour faire les verifications de saisie a l'aide d'expressions regulieres
             _type = inputManager.askMotorType();
         }
 

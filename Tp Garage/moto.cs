@@ -14,6 +14,7 @@ namespace Tp_Garage
             base.setInfos();
             _cylindre = _moteurvehicule._puissance;
             calculTaxe();
+            setPrixNet();
         }
 
         public override void afficherInfos()

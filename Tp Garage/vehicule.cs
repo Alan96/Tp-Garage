@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Tp_Garage
 {
-    public abstract class vehicule
+    public abstract class vehicule : IComparable<vehicule>
     {
         private static int _id; // Id de la classe
         protected int _vehiculeId;
@@ -30,7 +30,6 @@ namespace Tp_Garage
 
             _id++;
             _vehiculeId = _id;
-
         }
 
         public vehicule()
@@ -60,17 +59,13 @@ namespace Tp_Garage
             _moteurvehicule = new moteur();
 
 
-            ////option
-            //Console.Write("Ajouter option : ");
+            //option
+            Console.Write("Ajouter option : ");
+            ajouterOption();
 
+            //Prix Brut
+            _prixBrutVehicule = inputManager.askInt("Saisir prix Brut : ");
 
-            ////Console.Write("Saisir prix Brut du vehicule : ");
-            ////saisie = Console.ReadLine();
-            ////_prixBrutVehicule = int.Parse(saisie);
-            //_prixBrutVehicule = inputManager.askInt("Saisir prix Brut : ");
-
-            //// calculTaxe();
-            //// setPrixNet();
         }
 
         public virtual void afficherInfos()
@@ -92,17 +87,6 @@ namespace Tp_Garage
             Console.WriteLine("Prix net {0} : {1}", _typeVehicule, _prixNetVehicule);
         }
 
-        //   protected virtual moteur GetMoteur() { }
-        public float getPrixNet()
-        {
-            return _prixNetVehicule;
-        }
-
-        public float getPrixBrut()
-        {
-            return _prixBrutVehicule;
-        }
-
         protected void ajouterOption()
         {
             optionsVehicule.Add(new options());
@@ -118,9 +102,20 @@ namespace Tp_Garage
 
         protected void setPrixNet()
         {
-            _prixNetVehicule = _prixBrutVehicule + _taxe;
+            int prixOptions = 0;
+            foreach (options opt in optionsVehicule)
+            {
+                prixOptions += opt._prixOption;
+            }
+
+            _prixNetVehicule = _prixBrutVehicule + _taxe + prixOptions;
         }
 
         protected abstract void calculTaxe();
+
+        public int CompareTo(vehicule other)
+        {
+            return _prixNetVehicule.CompareTo(other._prixNetVehicule);
+        }
     }
 }

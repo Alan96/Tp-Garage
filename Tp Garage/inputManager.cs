@@ -9,6 +9,7 @@ namespace Tp_Garage
 
         public static int askInt(string message)
         {
+            // La saisie doit etre un nombre
             Regex regInt = new Regex("^\\d+$");
             string value = "";
             bool firstIteration = true;
@@ -31,6 +32,7 @@ namespace Tp_Garage
 
         public static string askMotorType()
         {
+            //La saisie doit etre un mot parmis cette liste
             Regex regMotorType = new Regex("^\\b(diesel|essence|electrique|hybride|e|h|d|el)$");
             bool firstIteration = true;
             string value = "";
@@ -44,7 +46,7 @@ namespace Tp_Garage
 
                 firstIteration = false;
                 Console.WriteLine("Type du moteur :");
-                Console.WriteLine("    - Diesel ou e");
+                Console.WriteLine("    - Diesel ou d");
                 Console.WriteLine("    - Essence ou e");
                 Console.WriteLine("    - Hybride ou h");
                 Console.WriteLine("    - Electrique ou el");

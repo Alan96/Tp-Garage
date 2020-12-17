@@ -31,6 +31,8 @@ namespace Tp_Garage
             _volumeChargement = inputManager.askInt("Saisir volume chargement : ");
 
             calculTaxe();
+            setPrixNet();
+
         }
 
 
@@ -46,7 +48,6 @@ namespace Tp_Garage
         protected override void calculTaxe()
         {
             _taxe = _nbrEssieux * 50;
-            setPrixNet();
         }
 
         // protected override moteur GetMoteur()

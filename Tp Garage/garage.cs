@@ -9,28 +9,52 @@ namespace Tp_Garage
     {
         public List<vehicule> vehiculesGarage = new List<vehicule>();
 
-        public void ajouterVehicule(int test)
-        {
-        }
 
         public void ajouterVehicule()
         {
-            string saisie = inputManager.askAddVehicule();
-            outputManager.displaySeparator();
-            switch (saisie)
-            {
-                case "1":
-                    vehiculesGarage.Add(new voiture());
-                    break;
-                case "2":
-                    vehiculesGarage.Add(new camion());
-                    break;
-                case "3":
-                    vehiculesGarage.Add(new moto());
 
-                    break;
-                default:
-                    break;
+                string saisie = inputManager.askAddVehicule();
+                outputManager.displaySeparator();
+                switch (saisie)
+                {
+                    case "1":
+                        vehiculesGarage.Add(new voiture());
+                        break;
+                    case "2":
+                        vehiculesGarage.Add(new camion());
+                        break;
+                    case "3":
+                        vehiculesGarage.Add(new moto());
+
+                        break;
+                    default:
+                        break;
+                }
+            
+        }
+
+        public void ajouterVehicule(int nbVehicule)
+        {
+            for (int i = 0; i < nbVehicule; i++)
+            {
+                string saisie = inputManager.askAddVehicule();
+                outputManager.displaySeparator();
+                switch (saisie)
+                {
+                    case "1":
+                        vehiculesGarage.Add(new voiture());
+                        break;
+                    case "2":
+                        vehiculesGarage.Add(new camion());
+                        break;
+                    case "3":
+                        vehiculesGarage.Add(new moto());
+
+                        break;
+                    default:
+                        break;
+                }
+
             }
         }
 
@@ -44,28 +68,12 @@ namespace Tp_Garage
             }
         }
 
-        //Test de trie avec compare to mais je comprends rien a leur fonction
-        //public void trieVehicule()
-        //{
-        //    foreach (vehicule vehiculeG in vehiculesGarage)
-        //    {
-        //        foreach (vehicule test in vehiculesGarage)
-        //        {
-        //            voiture v = vehiculeG as voiture;
-        //            if (v != vehiculeG)
-        //            {
-        //                if (v._chevaux.CompareTo(vehiculeG) != 1)
-        //                {
-        //                    int swap;
-        //                    swap = vehiculesGarage.IndexOf(v);
-        //                    vehiculesGarage.IndexOf(v) = vehiculesGarage.FindIndex(test);
-
-        //                }
-        //            }
-        //        }
-
-        //    }
-
-        //}
+        public void triVehicules()
+        {
+            outputManager.displaySeparator();
+            Console.WriteLine("Tri des vehicules en cours");
+            outputManager.displaySeparator();
+            vehiculesGarage.Sort(); // Va directement chercher la fonction CompareTo() pour savoir comment trier
+        }
     }
 }
