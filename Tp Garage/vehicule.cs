@@ -43,10 +43,10 @@ namespace Tp_Garage
             _id++;
 
             _vehiculeId = _id;
-            // Trouver facon de recuper automatiquement le nom de la classe
+            
             this._typeVehicule = this.GetType().Name;
             Console.WriteLine("Creation d'un(e) nouveau/nouvelle {0}",
-                _typeVehicule); // Recupere automatiquement le nom de la classe comme tu le voulais mon cochon
+                _typeVehicule);
             Console.Write("Saisir nom {0} : ", _typeVehicule);
             _nomVehicule = Console.ReadLine();
 

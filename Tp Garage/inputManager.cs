@@ -5,11 +5,11 @@ namespace Tp_Garage
 {
     public static class inputManager
     {
-        // Classe qui va gerer les inputs et les erreurs des utilisateurs
+        // Classe qui va gerer les inputs et les erreurs des utilisateurs a l'aide d'expressions régulières
 
         public static int askInt(string message)
         {
-            // La saisie doit etre un nombre
+            // La saisie doit etre un nombre (et pas plus de 7 chiffres a la suite afin de ne pas depasser la taille d'un int)
             Regex regInt = new Regex("^\\d{1,7}?$");
             string value = "";
             bool firstIteration = true;
@@ -76,6 +76,7 @@ namespace Tp_Garage
 
         public static string askAddVehicule()
         {
+            // Le chiffre doit être entre 1 et 3
             Regex regInt = new Regex("^[1-3]$");
             bool firstIteration = true;
             string value = "";
@@ -101,6 +102,7 @@ namespace Tp_Garage
 
         public static string askYesNo(string message)
         {
+            // La saisie doit être Y ou N
             Regex regYesNo = new Regex("^\\b(y|n)$");
             bool firstIteration = true;
             string value = "";
