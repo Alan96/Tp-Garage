@@ -123,5 +123,20 @@ namespace Tp_Garage
 
             vehiculesGarage.Remove(vehiculeASuppr);
         }
+
+        public void afficherOptionVehicule()
+        {
+            vehicule v = choisirVehicule();
+            Console.WriteLine("Option du Vehicule {0} : ", v.getVehiculeID());
+            v.afficherOptions();
+        }
+
+        public void ajouterOptionVehicule()
+        {
+            vehicule v = choisirVehicule();
+            Console.WriteLine("Ajout d'options au Vehicule {0} : ", v.getVehiculeID());
+            v.ajouterOption(inputManager.askInt("Nombre d'options à ajouter : "));
+
+        }
     }
 }

@@ -93,13 +93,13 @@ namespace Tp_Garage
             Console.WriteLine("Prix net {0} : {1}", _typeVehicule, _prixNetVehicule);
         }
 
-        protected void ajouterOption()
+        public void ajouterOption()
         {
             optionsVehicule.Add(new options());
         }
 
 
-        protected void afficherOptions()
+        public void afficherOptions()
         {
             int i = 0;
             foreach (options option in optionsVehicule)
@@ -122,7 +122,7 @@ namespace Tp_Garage
             }
         }
 
-        protected void ajouterOption(int plusieursOptions)
+        public void ajouterOption(int plusieursOptions)
         {
             for (int i = 0; i < plusieursOptions; i++)
             {
