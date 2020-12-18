@@ -10,7 +10,7 @@ namespace Tp_Garage
         public static int askInt(string message)
         {
             // La saisie doit etre un nombre
-            Regex regInt = new Regex("^\\d+$");
+            Regex regInt = new Regex("^\\d{1,7}?$");
             string value = "";
             bool firstIteration = true;
 
@@ -99,6 +99,27 @@ namespace Tp_Garage
             return value;
         }
 
+        public static string askYesNo(string message)
+        {
+            Regex regYesNo = new Regex("^\\b(y|n)$");
+            bool firstIteration = true;
+            string value = "";
+            
+            while (regYesNo.Match(value.ToLower()).Length <= 0)
+            {
+                if (!firstIteration)
+                {
+                    outputManager.displayError("Veuillez saisir Y ou N");
+                }
+
+                firstIteration = false;
+                Console.Write(message);
+                value = Console.ReadLine();
+            }
+
+            return value;
+            
+        }
         
 
     }

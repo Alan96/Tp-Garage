@@ -61,23 +61,15 @@ namespace Tp_Garage
 
 
             //option
-            Console.WriteLine("Voulez-vous ajouter une option ? (y/n)");
-            string saisie = Console.ReadLine();
-            while (saisie != "y" && saisie != "n")
-            {
-                Console.WriteLine("Saisir y ou n");
-                saisie = Console.ReadLine();
+            string saisie = inputManager.askYesNo("Voulez-vous ajouter une option ? (y/n) : ");
 
-            }
             if (saisie == "y")
             {
                 ajouterOption(inputManager.askInt("Nombre d'options à ajouter : "));
-
             }
 
             //Prix Brut
             _prixBrutVehicule = inputManager.askInt("Saisir prix Brut : ");
-
         }
 
         public virtual void afficherInfos()
@@ -96,6 +88,7 @@ namespace Tp_Garage
                     Console.WriteLine("---------------");
                     Console.WriteLine("Infos Options");
                 }
+
                 i++;
 
                 Console.WriteLine();
@@ -104,7 +97,6 @@ namespace Tp_Garage
                 if (i == optionsVehicule.Count)
                 {
                     Console.WriteLine("---------------");
-
                 }
             }
 
