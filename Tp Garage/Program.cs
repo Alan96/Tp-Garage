@@ -9,16 +9,27 @@ namespace Tp_Garage
         {
 
             //-----Test voiture---
-            vehicule v1 = new voiture();
-            v1.afficherInfos();
+            //vehicule v1 = new voiture();
+            //v1.afficherInfos();
 
 
             garage ChezBernard = new garage();
 
-            ChezBernard.ajouterVehicule(3);
+            ChezBernard.ajouterVehicule(2);
             
             
             ChezBernard.triVehicules();
+            ChezBernard.afficherVehicules();
+
+
+            ChezBernard.supprimerVehicule();
+            Console.WriteLine();
+            Console.WriteLine();
+            ChezBernard.supprimerVehicule();
+
+            Console.WriteLine();
+            Console.WriteLine();
+
             ChezBernard.afficherVehicules();
             
 

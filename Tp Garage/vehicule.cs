@@ -19,6 +19,11 @@ namespace Tp_Garage
         protected float _totalOptions;
         protected string _typeVehicule;
 
+        public int getVehiculeID()
+        {
+            return _vehiculeId;
+        }
+            
         public vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule,
             float taxe)
         {
@@ -80,6 +85,22 @@ namespace Tp_Garage
             Console.WriteLine("Infos Moteur");
             this._moteurvehicule.afficherInfos();
 
+            afficherOptions();
+
+            Console.WriteLine("Prix brut {0} : {1}", _typeVehicule, _prixBrutVehicule);
+            Console.WriteLine("Prix total des options " + _totalOptions);
+            Console.WriteLine("Taxe appliquee : {0}", _taxe);
+            Console.WriteLine("Prix net {0} : {1}", _typeVehicule, _prixNetVehicule);
+        }
+
+        protected void ajouterOption()
+        {
+            optionsVehicule.Add(new options());
+        }
+
+
+        protected void afficherOptions()
+        {
             int i = 0;
             foreach (options option in optionsVehicule)
             {
@@ -99,16 +120,6 @@ namespace Tp_Garage
                     Console.WriteLine("---------------");
                 }
             }
-
-            Console.WriteLine("Prix brut {0} : {1}", _typeVehicule, _prixBrutVehicule);
-            Console.WriteLine("Prix total des options " + _totalOptions);
-            Console.WriteLine("Taxe appliquee : {0}", _taxe);
-            Console.WriteLine("Prix net {0} : {1}", _typeVehicule, _prixNetVehicule);
-        }
-
-        protected void ajouterOption()
-        {
-            optionsVehicule.Add(new options());
         }
 
         protected void ajouterOption(int plusieursOptions)

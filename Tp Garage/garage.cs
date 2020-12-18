@@ -75,5 +75,53 @@ namespace Tp_Garage
             outputManager.displaySeparator();
             vehiculesGarage.Sort(); // Va directement chercher la fonction CompareTo() pour savoir comment trier
         }
+
+        public vehicule choisirVehicule()
+        {
+            string saisie;
+            int choix = -1;
+            if (vehiculesGarage.Count > 1)
+            {
+
+
+                while (choix < 0 || choix > vehiculesGarage.Count)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Saisir L'ID ou le nom du vehicule");
+                    Console.WriteLine("La saisie doit être comprise entre 1 et " + vehiculesGarage.Count);
+                    outputManager.displayError("Si vous souhaitez revoir la liste des vehicules tapez Y");
+
+                    saisie = Console.ReadLine();
+
+                    if (saisie == "y")
+                    {
+                        afficherVehicules();
+                    }
+                    else
+                    {
+                        choix = inputManager.testIntTryCatch(saisie);
+                    }
+                }
+
+                foreach (vehicule v in vehiculesGarage)
+                {
+                    if (v.getVehiculeID() == choix)
+                    {
+                        return v;
+                    }
+                }
+            }
+
+            return vehiculesGarage[0];
+        }
+
+        public void supprimerVehicule()
+        {
+            vehicule vehiculeASuppr = choisirVehicule();
+            Console.WriteLine("Le Vehicule {0} a bien ete supprime !", vehiculeASuppr.getVehiculeID());
+
+            vehiculesGarage.Remove(vehiculeASuppr);
+        }
     }
 }

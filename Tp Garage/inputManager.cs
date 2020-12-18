@@ -30,6 +30,22 @@ namespace Tp_Garage
         }
 
 
+        public static int testIntTryCatch(string saisie)
+        {
+            int choix = -1;
+            try
+            {
+                choix = int.Parse(saisie);
+            }
+            catch (Exception e)
+            {
+                outputManager.displayError("Veuillez saisir une valeur numérique");
+                Console.WriteLine("Test uni, message erreur : {0}", e.Message);
+            }
+            return choix;
+        }
+
+
         public static string askMotorType()
         {
             //La saisie doit etre un mot parmi cette liste
