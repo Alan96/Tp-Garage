@@ -4,8 +4,11 @@ using System.Text;
 
 namespace Tp_Garage
 {
+    [Serializable]
+
     class camion : vehicule
     {
+
         private int _nbrEssieux;
         private int _poidChargement;
         private int _volumeChargement;

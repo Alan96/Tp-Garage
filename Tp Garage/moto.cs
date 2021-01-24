@@ -4,8 +4,11 @@ using System.Text;
 
 namespace Tp_Garage
 {
+    [Serializable]
+
     class moto : vehicule
     {
+
         private int _cylindre;
 
 

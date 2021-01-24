@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace Tp_Garage
 {
@@ -12,28 +15,42 @@ namespace Tp_Garage
             //vehicule v1 = new voiture();
             //v1.afficherInfos();
 
+          //  string path = "C:/Users/mancu/OneDrive - Campus Rene Cassin/EPSI/B2/Langage C#/Tp Garage/Tp Garage/saveFic.bin";
+
 
             garage ChezBernard = new garage();
 
-            ChezBernard.ajouterVehicule(2);
-            
-            
-            ChezBernard.triVehicules();
-            ChezBernard.afficherVehicules();
+          //  ChezBernard.ajouterVehicule(2);
 
 
-            ChezBernard.supprimerVehicule();
-            Console.WriteLine();
-            Console.WriteLine();
-            ChezBernard.supprimerVehicule();
+            //ChezBernard.triVehicules();
+            //ChezBernard.afficherVehicules();
 
-            Console.WriteLine();
-            Console.WriteLine();
+           // ChezBernard.enregistrer(ChezBernard.vehiculesGarage, path);
 
-            ChezBernard.afficherVehicules();
-            
+            //ChezBernard.supprimerVehicule();
+            //Console.WriteLine();
+            //Console.WriteLine();
 
-            
+         //   ChezBernard.supprimerVehicule();
+
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            // ChezBernard.afficherVehicules();
+            // outputManager.displaySeparator();
+            //List<int> test = new List<int>();
+
+            //foreach(int testc in test)
+            //{
+            //    outputManager.displaySeparator();
+            //}
+
+        //    ChezBernard.vehiculesGarage = ChezBernard.charger<List<vehicule>>(path);
+
+            Menu _menu = new Menu(ChezBernard);
+
+
         }
     }
 }

@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Tp_Garage
 {
+    [Serializable]
+
     public class options
     {
 

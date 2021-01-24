@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Tp_Garage
 {
+    [Serializable]
     class voiture : vehicule
     {
         public int _chevaux;
