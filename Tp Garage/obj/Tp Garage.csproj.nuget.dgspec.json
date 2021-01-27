@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mancu\\OneDrive - Campus Rene Cassin\\EPSI\\B2\\Langage C#\\Tp Garage\\Tp Garage\\Tp Garage.csproj": {}
+    "C:\\Users\\Thoma\\RiderProjects\\Tp-GarageV2\\Tp Garage\\Tp Garage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mancu\\OneDrive - Campus Rene Cassin\\EPSI\\B2\\Langage C#\\Tp Garage\\Tp Garage\\Tp Garage.csproj": {
+    "C:\\Users\\Thoma\\RiderProjects\\Tp-GarageV2\\Tp Garage\\Tp Garage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mancu\\OneDrive - Campus Rene Cassin\\EPSI\\B2\\Langage C#\\Tp Garage\\Tp Garage\\Tp Garage.csproj",
+        "projectUniqueName": "C:\\Users\\Thoma\\RiderProjects\\Tp-GarageV2\\Tp Garage\\Tp Garage.csproj",
         "projectName": "Tp Garage",
-        "projectPath": "C:\\Users\\mancu\\OneDrive - Campus Rene Cassin\\EPSI\\B2\\Langage C#\\Tp Garage\\Tp Garage\\Tp Garage.csproj",
-        "packagesPath": "C:\\Users\\mancu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mancu\\OneDrive - Campus Rene Cassin\\EPSI\\B2\\Langage C#\\Tp Garage\\Tp Garage\\obj\\",
+        "projectPath": "C:\\Users\\Thoma\\RiderProjects\\Tp-GarageV2\\Tp Garage\\Tp Garage.csproj",
+        "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Thoma\\RiderProjects\\Tp-GarageV2\\Tp Garage\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mancu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +50,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Thoma\\.dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -24,3 +24,16 @@ C:\Users\Thoma\RiderProjects\Tp-Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Gara
 C:\Users\Thoma\RiderProjects\Tp-Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.dll
 C:\Users\Thoma\RiderProjects\Tp-Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.pdb
 C:\Users\Thoma\RiderProjects\Tp-Garage\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.genruntimeconfig.cache
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.exe
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.deps.json
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.runtimeconfig.json
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.runtimeconfig.dev.json
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.dll
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\bin\Debug\netcoreapp3.1\Tp Garage.pdb
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.csprojAssemblyReference.cache
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.AssemblyInfoInputs.cache
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.AssemblyInfo.cs
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.csproj.CoreCompileInputs.cache
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.dll
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.pdb
+C:\Users\Thoma\RiderProjects\Tp-GarageV2\Tp Garage\obj\Debug\netcoreapp3.1\Tp Garage.genruntimeconfig.cache

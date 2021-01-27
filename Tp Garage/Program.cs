@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Text;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Tp_Garage
 {
@@ -11,6 +14,10 @@ namespace Tp_Garage
         static void Main()
         {
 
+
+            String test = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+
+            Console.WriteLine(test);
             //-----Test voiture---
             //vehicule v1 = new voiture();
             //v1.afficherInfos();

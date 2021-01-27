@@ -1,18 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace Tp_Garage
 {
-    class Menu
+    public class Menu
     {
         private garage _garage;
-        private string path = "C:/Users/mancu/OneDrive - Campus Rene Cassin/EPSI/B2/Langage C#/Tp Garage/Tp Garage/saveFic.bin";
+        private string path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\saveFic.bin";
+        public vehicule vehiculeSelected;
 
         public Menu(garage Speedy)
         {
             _garage = Speedy;
-           _garage.vehiculesGarage = _garage.charger<List<vehicule>>(path);
+
+            garage tempGarage = _garage.charger<garage>(path);
+            //_garage.vehiculesGarage = _garage.charger<List<vehicule>>(path);
+            _garage.vehiculesGarage = tempGarage.vehiculesGarage;
+
+            if (_garage.vehiculesGarage == null) //Empeche d'avoir un garage egal a null
+            {
+                _garage.vehiculesGarage = new List<vehicule>();
+            }
+            else
+            {
+                for (int i = 0; i < _garage.vehiculesGarage.Count; i++) // Réecrit les IDs pour ne pas avoir de doublons
+                {
+                    _garage.vehiculesGarage[i].VehiculeId = i + 1;
+                    vehicule.Id = i + 1;
+                }
+            }
+
             Start();
         }
 
@@ -58,19 +78,19 @@ namespace Tp_Garage
                         _garage.ajouterVehicule();
                         break;
                     case 3:
-                        _garage.supprimerVehicule();
+                        _garage.supprimerVehicule(this.vehiculeSelected);
                         break;
                     case 4:
-                        _garage.choisirVehicule();
+                        this.vehiculeSelected = _garage.choisirVehicule(this);
                         break;
                     case 5:
-                        _garage.afficherOptionVehicule();
+                        _garage.afficherOptionVehicule(this.vehiculeSelected);
                         break;
                     case 6:
-                        _garage.choisirVehicule().ajouterOption();
+                        this.vehiculeSelected.ajouterOption();
                         break;
                     case 7:
-                        _garage.choisirVehicule().supprimerOption();
+                        this.vehiculeSelected.supprimerOption();
                         break;
                     case 8:
                         _garage.afficherListeOpt();
@@ -89,6 +109,5 @@ namespace Tp_Garage
                 }
             }
         }
-
     }
 }

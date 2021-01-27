@@ -31,7 +31,19 @@ namespace Tp_Garage
         {
             return _vehiculeId;
         }
-            
+
+        public static int Id
+        {
+            get => _id;
+            set => _id = value;
+        }
+
+        public int VehiculeId
+        {
+            get => _vehiculeId;
+            set => _vehiculeId = value;
+        }
+
         public vehicule(string nomVehicule, string marqueVehicule, float prixBrutVehicule, float prixNetVehicule,
             float taxe)
         {

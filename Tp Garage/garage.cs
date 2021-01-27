@@ -5,8 +5,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
 namespace Tp_Garage
 {
+    [Serializable]
     public class garage
     {
         public List<vehicule> vehiculesGarage = new List<vehicule>();
@@ -16,7 +18,6 @@ namespace Tp_Garage
 
         public garage()
         {
-
             moteur incrMoteur;
             listeMoteurs.Add(incrMoteur = new moteur(60, "d"));
             listeMoteurs.Add(incrMoteur = new moteur(70, "e"));
@@ -33,16 +34,10 @@ namespace Tp_Garage
             listeMarques.Add("audi");
             listeMarques.Add("smart");
             listeMarques.Add("citroen");
-
-
-            //Faire fonctions affichage listes + ajouts objets
-            //Faire une liste de marques strings
-
         }
 
         public void ajouterVehicule()
         {
-
             string saisie = inputManager.askAddVehicule();
             outputManager.displaySeparator();
             switch (saisie)
@@ -60,7 +55,6 @@ namespace Tp_Garage
                 default:
                     break;
             }
-
         }
 
         public void ajouterVehicule(int nbVehicule)
@@ -84,13 +78,12 @@ namespace Tp_Garage
                     default:
                         break;
                 }
-
             }
         }
 
         public void afficherVehicules()
         {
-            if(vehiculesGarage.Count > 0)
+            if (this.vehiculesGarage.Count > 0)
             {
                 foreach (vehicule vehiculeG in vehiculesGarage)
                 {
@@ -102,7 +95,7 @@ namespace Tp_Garage
             else
             {
                 Console.WriteLine("Garage vide");
-            } 
+            }
         }
 
         public void triVehicules()
@@ -113,14 +106,12 @@ namespace Tp_Garage
             vehiculesGarage.Sort(); // Va directement chercher la fonction CompareTo() pour savoir comment trier
         }
 
-        public vehicule choisirVehicule()
+        public vehicule choisirVehicule(Menu menu)
         {
             string saisie;
             int choix = -1;
             if (vehiculesGarage.Count > 1)
             {
-
-
                 while (choix < 0 || choix > vehiculesGarage.Count)
                 {
                     Console.WriteLine();
@@ -149,31 +140,54 @@ namespace Tp_Garage
                     }
                 }
             }
+            else if (vehiculesGarage.Count == 1)
+            {
+                return vehiculesGarage[0];
+            }
 
-            return vehiculesGarage[0];
+            return null;
         }
 
-        public void supprimerVehicule()
+        public void supprimerVehicule(vehicule vehiculeASuppr)
         {
-            vehicule vehiculeASuppr = choisirVehicule();
-            Console.WriteLine("Le Vehicule {0} a bien ete supprime !", vehiculeASuppr.getVehiculeID());
-
-            vehiculesGarage.Remove(vehiculeASuppr);
+            try
+            {
+                Console.WriteLine("Le Vehicule {0} a bien ete supprime !", vehiculeASuppr.getVehiculeID());
+                vehiculesGarage.Remove(vehiculeASuppr);
+            }
+            catch (Exception e)
+            {
+                // Console.WriteLine(e);
+                // throw;
+            }
         }
 
-        public void afficherOptionVehicule()
+        public void afficherOptionVehicule(vehicule v)
         {
-            vehicule v = choisirVehicule();
-            Console.WriteLine("Option du Vehicule {0} : ", v.getVehiculeID());
-            v.afficherOptions();
+            try
+            {
+                Console.WriteLine("Option du Vehicule {0} : ", v.getVehiculeID());
+                v.afficherOptions();
+            }
+            catch (Exception e)
+            {
+                // Console.WriteLine(e);
+                //throw;
+            }
         }
 
-        public void ajouterOptionVehicule()
+        public void ajouterOptionVehicule(vehicule v)
         {
-            vehicule v = choisirVehicule();
-            Console.WriteLine("Ajout d'options au Vehicule {0} : ", v.getVehiculeID());
-            v.ajouterOption(inputManager.askInt("Nombre d'options à ajouter : "));
-
+            try
+            {
+                Console.WriteLine("Ajout d'options au Vehicule {0} : ", v.getVehiculeID());
+                v.ajouterOption(inputManager.askInt("Nombre d'options à ajouter : "));
+            }
+            catch (Exception e)
+            {
+                //Console.WriteLine(e);
+                //throw;
+            }
         }
 
         public void afficherListeMoteur()
@@ -183,25 +197,42 @@ namespace Tp_Garage
             Console.WriteLine("Moteurs disponibles :");
             for (int i = 0; i < listeMoteurs.Count; i++)
             {
-                Console.WriteLine("Moteur {0} : {1} de {2} chevaux", i + 1, listeMoteurs[i]._type, listeMoteurs[i]._puissance);
+                Console.WriteLine("Moteur {0} : {1} de {2} chevaux", i + 1, listeMoteurs[i]._type,
+                    listeMoteurs[i]._puissance);
             }
+
             outputManager.displaySeparator();
         }
 
         public void afficherListeOpt()
         {
-            addListeItem();
+            try
+            {
+                addListeItem();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                //throw;
+            }
+
             outputManager.displaySeparator();
             Console.WriteLine("Options disponibles :");
             for (int i = 0; i < listeOptions.Count; i++)
             {
                 Console.WriteLine("Option {0} : {1}", i + 1, listeOptions[i]._nomOption);
             }
+
             outputManager.displaySeparator();
         }
 
         private void addListeItem()
         {
+            if (vehiculesGarage == null)
+            {
+                return;
+            }
+
             foreach (vehicule v in vehiculesGarage)
             {
                 for (int i = 0; i < listeMoteurs.Count; i++)
@@ -214,10 +245,8 @@ namespace Tp_Garage
                     if (v.Moteur().GetType().Equals(listeMoteurs[i].GetType()))
                     {
                         listeMoteurs.Add(v.Moteur());
-
                     }
                 }
-
             }
         }
 
@@ -229,6 +258,7 @@ namespace Tp_Garage
             {
                 Console.WriteLine("Marque {0} : {1}", i + 1, listeMarques[i]);
             }
+
             outputManager.displaySeparator();
         }
 
@@ -236,16 +266,19 @@ namespace Tp_Garage
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            FileStream flux = null; 
+
+            FileStream flux = null;
             try
             {
                 flux = new FileStream(path, FileMode.Create, FileAccess.Write);
+                flux.Position = 0;
                 formatter.Serialize(flux, toSave);
                 flux.Flush();
             }
-            catch
+            catch (Exception e)
             {
-
+                //error
+                Console.WriteLine(e);
             }
             finally
             {
@@ -256,26 +289,26 @@ namespace Tp_Garage
 
         public T charger<T>(string path)
         {
-            BinaryFormatter formatter = new BinaryFormatter(); 
+            BinaryFormatter formatter = new BinaryFormatter();
             FileStream flux = null;
 
             try
             {
-                flux = new FileStream(path, FileMode.Open, FileAccess.Read); 
-                return (T)formatter.Deserialize(flux);
+                flux = new FileStream(path, FileMode.Open, FileAccess.Read);
+                flux.Position = 0;
+                return (T) formatter.Deserialize(flux);
             }
-            catch
+            catch (Exception e)
             {
-
+                Console.WriteLine(e);
                 return default(T);
             }
             finally
             {
-                if (flux!=null)
+                if (flux != null)
                 {
                     flux.Close();
                 }
-
             }
         }
     }
