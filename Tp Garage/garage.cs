@@ -192,7 +192,16 @@ namespace Tp_Garage
 
         public void afficherListeMoteur()
         {
-            addListeItem();
+            try
+            {
+                addListeItem();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                //throw;
+            }
+
             outputManager.displaySeparator();
             Console.WriteLine("Moteurs disponibles :");
             for (int i = 0; i < listeMoteurs.Count; i++)

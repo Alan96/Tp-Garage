@@ -6,10 +6,8 @@ using System.Text.RegularExpressions;
 namespace Tp_Garage
 {
     [Serializable]
-
     public abstract class vehicule : IComparable<vehicule>
     {
-
         private static int _id; // Id de la classe
         protected int _vehiculeId;
         protected string _nomVehicule;
@@ -22,10 +20,20 @@ namespace Tp_Garage
         protected float _totalOptions;
         protected string _typeVehicule;
 
-        public string Marque(){ return _marqueVehicule; }
-        public moteur Moteur() { return _moteurvehicule; }
+        public string Marque()
+        {
+            return _marqueVehicule;
+        }
 
-        public List<options> optionsGet() { return optionsVehicule; }
+        public moteur Moteur()
+        {
+            return _moteurvehicule;
+        }
+
+        public List<options> optionsGet()
+        {
+            return optionsVehicule;
+        }
 
         public int getVehiculeID()
         {
@@ -68,7 +76,7 @@ namespace Tp_Garage
             _id++;
 
             _vehiculeId = _id;
-            
+
             this._typeVehicule = this.GetType().Name;
             Console.WriteLine("Creation d'un(e) nouveau/nouvelle {0}",
                 _typeVehicule);
@@ -126,8 +134,9 @@ namespace Tp_Garage
                 Console.WriteLine("Liste des Options du vehicule :");
                 for (int i = 0; i < optionsVehicule.Count; i++)
                 {
-                    Console.WriteLine((i+1) + " " + optionsVehicule[i]._nomOption);
+                    Console.WriteLine((i + 1) + " " + optionsVehicule[i]._nomOption);
                 }
+
                 while (saisie == -1)
                 {
                     Console.WriteLine("Selectionner l'option que vous souhaitez supprimer");
@@ -141,16 +150,14 @@ namespace Tp_Garage
                         Console.WriteLine("Saisir la valeur associee a l'option");
                     }
                 }
+
                 Console.WriteLine("L'option : {0} a bien ete supprimee", optionsVehicule[saisie]._nomOption);
                 optionsVehicule.RemoveAt(saisie);
-
             }
             else
             {
                 Console.WriteLine("Pas d'options a supprimer");
             }
-
-
         }
 
 

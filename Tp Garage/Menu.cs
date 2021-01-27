@@ -78,19 +78,53 @@ namespace Tp_Garage
                         _garage.ajouterVehicule();
                         break;
                     case 3:
-                        _garage.supprimerVehicule(this.vehiculeSelected);
+
+                        if (vehiculeSelected != null)
+                        {
+                            _garage.supprimerVehicule(this.vehiculeSelected);
+                        }
+                        else
+                        {
+                            outputManager.displayError("Pas de vehicule selectionne");
+                        }
+
                         break;
                     case 4:
                         this.vehiculeSelected = _garage.choisirVehicule(this);
                         break;
                     case 5:
-                        _garage.afficherOptionVehicule(this.vehiculeSelected);
+
+                        if (vehiculeSelected != null)
+                        {
+                            _garage.afficherOptionVehicule(this.vehiculeSelected);
+                        }
+                        else
+                        {
+                            outputManager.displayError("Pas de vehicule selectionne");
+                        }
+
                         break;
                     case 6:
-                        this.vehiculeSelected.ajouterOption();
+                        if (vehiculeSelected != null)
+                        {
+                            this.vehiculeSelected.ajouterOption();
+                        }
+                        else
+                        {
+                            outputManager.displayError("Pas de vehicule selectionne");
+                        }
+
                         break;
                     case 7:
-                        this.vehiculeSelected.supprimerOption();
+                        if (vehiculeSelected != null)
+                        {
+                            this.vehiculeSelected.supprimerOption();
+                        }
+                        else
+                        {
+                            outputManager.displayError("Pas de vehicule selectionne");
+                        }
+
                         break;
                     case 8:
                         _garage.afficherListeOpt();
